@@ -28,5 +28,5 @@ def webhook():
         send_telegram_message(message)
     return 'OK', 200
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
