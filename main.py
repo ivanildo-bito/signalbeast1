@@ -5,7 +5,7 @@ app = Flask(_name_)
 
 # Zet hier je Telegram Bot Token en Chat ID
 BOT_TOKEN = '7743716121:AAEtAuZPTaEqQK4lZysmMw6tV1Kv_K_NDyc'
-CHAT_ID = '5952085659'  # <- vul dit aan met je echte Chat ID als die anders is
+CHAT_ID = '5952085659'  # <-- gebruik je echte Chat ID hier
 
 @app.route('/')
 def home():
