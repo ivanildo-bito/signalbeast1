@@ -3,9 +3,9 @@ import requests
 
 app = Flask(_name_)
 
-# Telegram bot token en chat ID
+# Telegram bot gegevens
 BOT_TOKEN = '7743716121:AAEtAuZPTaEqQK4lZysmMw6tV1Kv_K_NDyc'
-CHAT_ID = '5952085659'  # Vervang dit met je echte chat ID
+CHAT_ID = '5952085659'  # Jouw chat ID
 
 def send_telegram_message(text):
     url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
@@ -14,8 +14,7 @@ def send_telegram_message(text):
         'text': text,
         'parse_mode': 'HTML'
     }
-    response = requests.post(url, data=payload)
-    return response
+    requests.post(url, data=payload)
 
 @app.route('/')
 def home():
@@ -25,7 +24,7 @@ def home():
 def webhook():
     data = request.json
     if data:
-        message = f"Nieuw signaal:\n\n{data}"
+        message = f"Nieuw signaal ontvangen:\n\n{data}"
         send_telegram_message(message)
     return 'OK', 200
 
